@@ -3,7 +3,7 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     private float xRange = 4f;
-    private float ySpawnPos = -6f;
+    private float ySpawnPos = -2f;
     private float minSpeed = 12f;
     private float maxSpeed = 16f;
     private float maxTorque = 10f;
@@ -17,6 +17,16 @@ public class Target : MonoBehaviour
         targetRB.AddTorque(RandomTorque(), RandomTorque(), RandomTorque(), ForceMode.Impulse);
 
         transform.position = RandomSpawnPosition();
+    }
+
+    private void OnMouseDown()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
     }
 
     private Vector3 RandomForce()
