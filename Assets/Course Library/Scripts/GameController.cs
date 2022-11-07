@@ -19,9 +19,16 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        
+    }
+
+    public void StartGame()
+    {
         isGameActive = true;
-        StartCoroutine(SpawnTarget());
         score = 0;
+
+        StartCoroutine(SpawnTarget());
+        UpdateScore(0);
     }
 
     public void GameOver()
