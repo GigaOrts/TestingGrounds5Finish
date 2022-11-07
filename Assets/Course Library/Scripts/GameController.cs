@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public List<GameObject> targets;
 
     public Button restartButton;
+    public GameObject titleScreen;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     public bool isGameActive;
@@ -17,14 +18,10 @@ public class GameController : MonoBehaviour
     private int score;
     private float spawnRate = 1f;
 
-    void Start()
-    {
-        
-    }
-
     public void StartGame()
     {
         isGameActive = true;
+        titleScreen.gameObject.SetActive(false);
         score = 0;
 
         StartCoroutine(SpawnTarget());
