@@ -7,6 +7,8 @@ public class DifficultyButton : MonoBehaviour
     private Button button;
     private GameController game;
 
+    public int difficulty;
+
     private void Start()
     {
         button = GetComponent<Button>();
@@ -16,6 +18,6 @@ public class DifficultyButton : MonoBehaviour
 
     private void SetDifficulty()
     {
-        game.StartGame();
+        game.StartGame(difficulty);
     }
 }

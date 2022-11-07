@@ -18,11 +18,13 @@ public class GameController : MonoBehaviour
     private int score;
     private float spawnRate = 1f;
 
-    public void StartGame()
+    public void StartGame(int difficulty)
     {
         isGameActive = true;
         titleScreen.gameObject.SetActive(false);
+
         score = 0;
+        spawnRate /= difficulty;
 
         StartCoroutine(SpawnTarget());
         UpdateScore(0);
